@@ -13,6 +13,8 @@ namespace Bloodlust.Gameplay.Playing
 
         private PlayerControls _playerControls;
 
+        public HealthController HealthController => _healthController;
+
         public void Begin(PlayerControls playerControls)
         {
             _playerControls = playerControls;
@@ -31,6 +33,17 @@ namespace Bloodlust.Gameplay.Playing
 
         public void Tick(float deltaTime)
         {
+#if UNITY_EDITOR
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                _healthController.TakeDamage(10);
+            }
+            else if (Input.GetKeyDown(KeyCode.L))
+            {
+                _healthController.Heal(10);
+            }
+#endif
+            
             _movement.Tick(deltaTime);
             _healthController.Tick(deltaTime);
         }

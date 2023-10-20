@@ -7,11 +7,15 @@ namespace Bloodlust.Gameplay
     {
         [SerializeField] 
         private CharacterManager _characterManager;
-        
-        public GameplaySystem Instance => this;
+
+        public CharacterManager CharacterManager => _characterManager;
+
+        public static GameplaySystem Instance;
         
         private void Awake()
         {
+            Instance = this;
+
             _characterManager.Initialize();
         }
 

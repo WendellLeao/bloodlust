@@ -11,6 +11,8 @@ namespace Bloodlust.Gameplay.Playing
         private Transform _spawnPoint;
 
         private PlayerControls _playerControls;
+
+        public Character Character => _character;
         
         public void Initialize()
         {

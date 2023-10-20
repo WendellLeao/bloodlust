@@ -4,10 +4,13 @@ namespace Bloodlust.Gameplay.Health
 {
     public class HealthController : MonoBehaviour
     {
+        public delegate void HealthDelegate(int currentHealth, int maxHealth);
+        public event HealthDelegate OnHealthChanged;
+        
         [SerializeField] 
-        private float _maxHealth;
+        private int _maxHealth = 100;
 
-        private float _currentHealth;
+        private int _currentHealth;
 
         public void Begin()
         {
@@ -22,22 +25,21 @@ namespace Bloodlust.Gameplay.Health
         public void Tick(float deltaTime)
         { }
 
-        public void TakeDamage(float amount)
+        public void TakeDamage(int amount)
         {
             SetHealth(_currentHealth - amount);
         }
 
-        public void Heal(float amount)
+        public void Heal(int amount)
         {
             SetHealth(_currentHealth + amount);
         }
 
-        private void SetHealth(float newHealth)
+        private void SetHealth(int newHealth)
         {
-            Debug.Log($"<color=cyan>Old health: {_currentHealth} | New health: {newHealth}</color>");
+            _currentHealth = Mathf.Clamp(newHealth, 0, _maxHealth);
             
-            _currentHealth = newHealth;
-            _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
+            OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
         }
     }
 }
