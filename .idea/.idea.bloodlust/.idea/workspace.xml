@@ -5,20 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfab8465-58f7-4475-b7fd-f9cfb1ab36f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIGameplayView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIGameplayView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIHealthBar.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UIHealthBar.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UISystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/UI/UISystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/TerrainPalette.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/TerrainPalette.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/IDamageable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/IDamageable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/BloodlustController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/BloodlustController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Temp.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Temp/level_idea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Temp/level_idea.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bloodlust/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bloodlust/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Character.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/GameplaySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/GameplaySystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/HealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/HealthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/CharacterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/CharacterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +45,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\leaow\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\leaow\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\leaow\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\leaow\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\leaow\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\leaow\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.10f1\Editor\Unity.exe" />
@@ -101,7 +111,8 @@
       <option name="presentableId" value="Default" />
       <updated>1697831926868</updated>
       <workItem from="1697831928168" duration="7000" />
-      <workItem from="1697832174776" duration="4345000" />
+      <workItem from="1697832174776" duration="4693000" />
+      <workItem from="1697853000986" duration="1753000" />
     </task>
     <servers />
   </component>

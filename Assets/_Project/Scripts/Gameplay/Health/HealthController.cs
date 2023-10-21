@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Bloodlust.Gameplay.Health
 {
-    public class HealthController : MonoBehaviour
+    public class HealthController : MonoBehaviour, IDamageable
     {
         public delegate void HealthDelegate(int currentHealth, int maxHealth);
         public event HealthDelegate OnHealthChanged;
@@ -11,6 +11,9 @@ namespace Bloodlust.Gameplay.Health
         private int _maxHealth = 100;
 
         private int _currentHealth;
+        
+        public int CurrentHealth => _currentHealth;
+        public int MaxHealth => _maxHealth;
 
         public void Begin()
         {
@@ -21,9 +24,6 @@ namespace Bloodlust.Gameplay.Health
         {
             _currentHealth = _maxHealth;
         }
-
-        public void Tick(float deltaTime)
-        { }
 
         public void TakeDamage(int amount)
         {

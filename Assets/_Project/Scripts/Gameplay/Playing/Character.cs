@@ -11,6 +11,9 @@ namespace Bloodlust.Gameplay.Playing
         [SerializeField]
         private HealthController _healthController;
 
+        [SerializeField] 
+        private BloodlustController _bloodlustController;
+
         private PlayerControls _playerControls;
 
         public HealthController HealthController => _healthController;
@@ -22,6 +25,7 @@ namespace Bloodlust.Gameplay.Playing
             
             _movement.Begin(_playerControls);
             _healthController.Begin();
+            _bloodlustController.Begin(_healthController);
         }
 
         public void Stop()
@@ -29,6 +33,7 @@ namespace Bloodlust.Gameplay.Playing
             _playerControls.Disable();
             _movement.Stop();
             _healthController.Stop();
+            _bloodlustController.Stop();
         }
 
         public void Tick(float deltaTime)
@@ -45,7 +50,7 @@ namespace Bloodlust.Gameplay.Playing
 #endif
             
             _movement.Tick(deltaTime);
-            _healthController.Tick(deltaTime);
+            _bloodlustController.Tick(deltaTime);
         }
         
         public void FixedTick(float fixedDeltaTime)
