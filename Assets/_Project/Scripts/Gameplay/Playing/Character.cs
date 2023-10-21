@@ -25,7 +25,7 @@ namespace Bloodlust.Gameplay.Playing
             
             _movement.Begin(_playerControls);
             _healthController.Begin();
-            _bloodlustController.Begin(_healthController);
+            _bloodlustController.Begin(_healthController, _playerControls);
         }
 
         public void Stop()

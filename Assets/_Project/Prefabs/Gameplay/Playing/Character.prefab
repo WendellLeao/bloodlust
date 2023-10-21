@@ -249,4 +249,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 5
-  _damageRate: 1
+  _damageRate: 0.6
+  _radius: 0.75

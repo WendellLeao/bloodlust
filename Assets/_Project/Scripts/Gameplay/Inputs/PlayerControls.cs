@@ -37,6 +37,24 @@ namespace Bloodlust.Inputs
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee64a858-9e25-43f5-a049-9af0b4b031d0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""317ed295-e28c-4e7d-abd2-576a470c04d4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -94,6 +112,28 @@ namespace Bloodlust.Inputs
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76c8ab0d-e797-4f0f-be45-54ce54fd7126"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31047020-ec44-4bca-93eb-b931c897c087"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -103,6 +143,8 @@ namespace Bloodlust.Inputs
             // LandMap
             m_LandMap = asset.FindActionMap("LandMap", throwIfNotFound: true);
             m_LandMap_Move = m_LandMap.FindAction("Move", throwIfNotFound: true);
+            m_LandMap_Interact = m_LandMap.FindAction("Interact", throwIfNotFound: true);
+            m_LandMap_Newaction = m_LandMap.FindAction("New action", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -165,11 +207,15 @@ namespace Bloodlust.Inputs
         private readonly InputActionMap m_LandMap;
         private List<ILandMapActions> m_LandMapActionsCallbackInterfaces = new List<ILandMapActions>();
         private readonly InputAction m_LandMap_Move;
+        private readonly InputAction m_LandMap_Interact;
+        private readonly InputAction m_LandMap_Newaction;
         public struct LandMapActions
         {
             private @PlayerControls m_Wrapper;
             public LandMapActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
             public InputAction @Move => m_Wrapper.m_LandMap_Move;
+            public InputAction @Interact => m_Wrapper.m_LandMap_Interact;
+            public InputAction @Newaction => m_Wrapper.m_LandMap_Newaction;
             public InputActionMap Get() { return m_Wrapper.m_LandMap; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -182,6 +228,12 @@ namespace Bloodlust.Inputs
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
             }
 
             private void UnregisterCallbacks(ILandMapActions instance)
@@ -189,6 +241,12 @@ namespace Bloodlust.Inputs
                 @Move.started -= instance.OnMove;
                 @Move.performed -= instance.OnMove;
                 @Move.canceled -= instance.OnMove;
+                @Interact.started -= instance.OnInteract;
+                @Interact.performed -= instance.OnInteract;
+                @Interact.canceled -= instance.OnInteract;
+                @Newaction.started -= instance.OnNewaction;
+                @Newaction.performed -= instance.OnNewaction;
+                @Newaction.canceled -= instance.OnNewaction;
             }
 
             public void RemoveCallbacks(ILandMapActions instance)
@@ -209,6 +267,8 @@ namespace Bloodlust.Inputs
         public interface ILandMapActions
         {
             void OnMove(InputAction.CallbackContext context);
+            void OnInteract(InputAction.CallbackContext context);
+            void OnNewaction(InputAction.CallbackContext context);
         }
     }
 }
