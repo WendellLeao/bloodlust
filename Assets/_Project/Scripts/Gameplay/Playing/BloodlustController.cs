@@ -18,14 +18,16 @@ namespace Bloodlust.Gameplay.Playing
 
         private IDamageable _damageable;
         private PlayerControls _playerControls;
-        private Collider2D[] _hitColliders = new Collider2D[5];
-        private float _timer;
         private PlayerControls.LandMapActions _landMap;
+        private BloodChecker _bloodChecker;
+        private float _timer;
 
         public void Begin(IDamageable damageable, PlayerControls playerControls)
         {
             _damageable = damageable;
             _landMap = playerControls.LandMap;
+
+            _bloodChecker = new BloodChecker();
         }
         
         public void Stop()
@@ -37,7 +39,7 @@ namespace Bloodlust.Gameplay.Playing
 
             if (_landMap.Interact.triggered)
             {
-                CheckForBlood();
+                CheckForBloodToDrain();
             }
         }
 
@@ -52,23 +54,13 @@ namespace Bloodlust.Gameplay.Playing
             }
         }
         
-        private void CheckForBlood()
+        private void CheckForBloodToDrain()
         {
-            for (var i = 0; i < _hitColliders.Length; i++)
-            {
-                _hitColliders[i] = null;
-            }
+            Collider2D[] hitColliders = _bloodChecker.CheckForNearestBlood(transform.position, _radius);
             
-            int collidersCount = Physics2D.OverlapCircleNonAlloc(transform.position, _radius, _hitColliders);
-
-            if (collidersCount <= 0)
+            for (int i = 0; i < hitColliders.Length; i++)
             {
-                return;
-            }
-            
-            for (int i = 0; i < _hitColliders.Length; i++)
-            {
-                Collider2D hitCollider = _hitColliders[i];
+                Collider2D hitCollider = hitColliders[i];
 
                 if (hitCollider == null)
                 {
@@ -77,16 +69,21 @@ namespace Bloodlust.Gameplay.Playing
                 
                 if (hitCollider.transform.TryGetComponent(out IHasBlood hasBlood))
                 {
-                    Transform colliderTransform = hitCollider.transform;
-
-                    bool isFacingRight = colliderTransform.localScale.x > 0;
-                    float offset = isFacingRight ? -0.5f : 0.5f;
-                    
-                    transform.position = colliderTransform.position + new Vector3(offset, 0.5f);
-
-                    hasBlood.DrainBlood(amount: 9999, _damageable);
+                    DrainColliderBlood(hitCollider, hasBlood);
                 }
             }
+        }
+
+        private void DrainColliderBlood(Collider2D hitCollider, IHasBlood hasBlood)
+        {
+            Transform colliderTransform = hitCollider.transform;
+
+            bool isFacingRight = colliderTransform.localScale.x > 0;
+            float offset = isFacingRight ? -0.5f : 0.5f;
+
+            transform.position = colliderTransform.position + new Vector3(offset, 0.5f);
+
+            hasBlood.DrainBlood(amount: 9999, _damageable);
         }
 
         private void OnDrawGizmos()
