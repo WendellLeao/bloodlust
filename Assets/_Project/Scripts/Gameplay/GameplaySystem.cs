@@ -1,3 +1,4 @@
+using Bloodlust.Gameplay.Enemies;
 using Bloodlust.Gameplay.Playing;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ namespace Bloodlust.Gameplay
     {
         [SerializeField] 
         private CharacterManager _characterManager;
+        [SerializeField] 
+        private EnemiesManager _enemiesManager;
 
         public CharacterManager CharacterManager => _characterManager;
 
@@ -17,11 +20,13 @@ namespace Bloodlust.Gameplay
             Instance = this;
 
             _characterManager.Initialize();
+            _enemiesManager.Initialize();
         }
 
         private void OnDestroy()
         {
             _characterManager.Dispose();
+            _enemiesManager.Dispose();
         }
 
         private void Update()

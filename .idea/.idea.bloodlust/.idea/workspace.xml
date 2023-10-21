@@ -5,30 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfab8465-58f7-4475-b7fd-f9cfb1ab36f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/TerrainPalette.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/TerrainPalette.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/IDamageable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/IDamageable.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/BloodlustController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/BloodlustController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Temp.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Temp/level_idea.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Project/Temp/level_idea.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Enemies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Enemies/Enemy.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Enemies/Enemy.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Playing.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Enemies/EnemiesManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Enemies/EnemiesManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Enemies/Enemy.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Enemies/Enemy.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/IHasBlood.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/IHasBlood.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.bloodlust/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bloodlust/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/TerrainPalette.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/TerrainPalette.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/TerrainPalette.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/TerrainPalette.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block_2.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block_2.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Graphics/block_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Graphics/_Temp/block_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Character.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Playing/Character.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Character.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Playing/Character.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/GameplaySystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/GameplaySystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/HealthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/HealthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Playing/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +42,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Enemies/EnemiesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/HealthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Scripts/UI/UISystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Triplano/Rogue Masters/RogueMasters/Assets/Modules/RogueNPCs/Scripts/RogueNPC.cs" root0="SKIP_HIGHLIGHTING" />
@@ -112,7 +119,7 @@
       <updated>1697831926868</updated>
       <workItem from="1697831928168" duration="7000" />
       <workItem from="1697832174776" duration="4693000" />
-      <workItem from="1697853000986" duration="1753000" />
+      <workItem from="1697853000986" duration="2883000" />
     </task>
     <servers />
   </component>

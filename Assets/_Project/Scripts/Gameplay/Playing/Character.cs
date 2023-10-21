@@ -45,7 +45,7 @@ namespace Bloodlust.Gameplay.Playing
             }
             else if (Input.GetKeyDown(KeyCode.L))
             {
-                _healthController.Heal(10);
+                _healthController.Heal(40);
             }
 #endif
             
