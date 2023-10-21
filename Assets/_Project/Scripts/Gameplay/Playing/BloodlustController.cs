@@ -1,3 +1,4 @@
+using System.Collections;
 using Bloodlust.Gameplay.Health;
 using Bloodlust.Inputs;
 using UnityEngine;
@@ -15,6 +16,8 @@ namespace Bloodlust.Gameplay.Playing
         [Header("Drain Blood")] 
         [SerializeField]
         private int _drainBloodAmount;
+        [SerializeField] 
+        private float _delayToDrainBlood = 1f;
         [SerializeField]
         private float _radius;
 
@@ -58,7 +61,17 @@ namespace Bloodlust.Gameplay.Playing
             _isDrainingBlood = true;
 
             _characterView.TriggerDrainBlood();
-            // _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
+
+            StartCoroutine(DrainBloodRoutine());
+
+            IEnumerator DrainBloodRoutine()
+            {
+                yield return new WaitForSeconds(_delayToDrainBlood);
+            
+                _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
+
+                _isDrainingBlood = false;
+            }
         }
 
         private void HandleGradualDamage(float deltaTime)
