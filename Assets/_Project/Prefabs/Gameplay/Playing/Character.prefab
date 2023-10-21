@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff28bece41b4569bba2e5b1de96af48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 2322226666007273210}
   _animator: {fileID: 5402622096720187681}
   _characterAnimationController: {fileID: 7559755344957325169}
 --- !u!114 &7559755344957325169
@@ -303,4 +304,5 @@ MonoBehaviour:
   _damageAmount: 5
   _damageRate: 0.6
   _drainBloodAmount: 50
+  _delayToDrainBlood: 1
   _radius: 2

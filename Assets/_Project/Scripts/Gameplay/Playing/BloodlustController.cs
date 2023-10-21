@@ -70,6 +70,8 @@ namespace Bloodlust.Gameplay.Playing
             
                 _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
 
+                _characterView.ResetOrderInLayer();
+                
                 _isDrainingBlood = false;
             }
         }

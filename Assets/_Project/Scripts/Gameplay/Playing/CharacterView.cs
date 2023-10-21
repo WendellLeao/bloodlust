@@ -4,17 +4,22 @@ namespace Bloodlust.Gameplay.Playing
 {
     public class CharacterView : MonoBehaviour
     {
+        [SerializeField] 
+        private SpriteRenderer _spriteRenderer;
         [SerializeField]
         private Animator _animator;
-        [SerializeField] 
+        [SerializeField]
         private CharacterAnimationController _characterAnimationController;
 
         private bool _isFacingRight = true;
+        private int _originalSortingOrder;
 
         public bool IsFacingRight => _isFacingRight;
         
         public void Begin()
         {
+            _originalSortingOrder = _spriteRenderer.sortingOrder;
+            
             _characterAnimationController.Begin(_animator);
         }
 
@@ -47,12 +52,19 @@ namespace Bloodlust.Gameplay.Playing
 
         public void TriggerDash()
         {
+            _spriteRenderer.sortingOrder = 0;
+            
             _characterAnimationController.TriggerDash();
         }
 
         public void TriggerDrainBlood()
         {
             _characterAnimationController.TriggerDrainBlood();
+        }
+
+        public void ResetOrderInLayer()
+        { 
+            _spriteRenderer.sortingOrder = _originalSortingOrder;
         }
     }
 }
