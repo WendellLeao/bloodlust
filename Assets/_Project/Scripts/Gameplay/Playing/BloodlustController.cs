@@ -12,21 +12,31 @@ namespace Bloodlust.Gameplay.Playing
         [SerializeField] 
         private float _damageRate;
 
-        [Header("Check for Blood")]
+        [Header("Drain Blood")] 
+        [SerializeField]
+        private int _drainBloodAmount;
         [SerializeField]
         private float _radius;
 
-        private IDamageable _damageable;
         private PlayerControls _playerControls;
         private PlayerControls.LandMapActions _landMap;
+        private CharacterView _characterView;
+        private IDamageable _damageable;
         private BloodChecker _bloodChecker;
+        private CharacterMovement _movement;
+        private IHasBlood _currentBloodTarget;
         private float _timer;
+        private bool _isDrainingBlood;
 
-        public void Begin(IDamageable damageable, PlayerControls playerControls)
+        public bool IsDrainingBlood => _isDrainingBlood;
+        
+        public void Begin(PlayerControls playerControls, IDamageable damageable, CharacterView characterView, CharacterMovement movement)
         {
-            _damageable = damageable;
             _landMap = playerControls.LandMap;
-
+            _damageable = damageable;
+            _characterView = characterView;
+            _movement = movement;
+            
             _bloodChecker = new BloodChecker();
         }
         
@@ -41,6 +51,14 @@ namespace Bloodlust.Gameplay.Playing
             {
                 CheckForBloodToDrain();
             }
+        }
+
+        public void DrainCurrentTargetBlood()
+        {
+            _isDrainingBlood = true;
+
+            _characterView.TriggerDrainBlood();
+            // _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
         }
 
         private void HandleGradualDamage(float deltaTime)
@@ -69,21 +87,20 @@ namespace Bloodlust.Gameplay.Playing
                 
                 if (hitCollider.transform.TryGetComponent(out IHasBlood hasBlood))
                 {
-                    DrainColliderBlood(hitCollider, hasBlood);
+                    _currentBloodTarget = hasBlood;
+                    
+                    DashToTarget(hitCollider);
                 }
             }
         }
 
-        private void DrainColliderBlood(Collider2D hitCollider, IHasBlood hasBlood)
+        private void DashToTarget(Collider2D hitCollider)
         {
+            _characterView.TriggerDash();
+
             Transform colliderTransform = hitCollider.transform;
 
-            bool isFacingRight = colliderTransform.localScale.x > 0;
-            float offset = isFacingRight ? -0.2f : 0.2f;
-
-            transform.position = colliderTransform.position + new Vector3(offset, 0f);
-
-            hasBlood.DrainBlood(amount: 9999, _damageable);
+            _movement.MoveTowardsPosition(colliderTransform);
         }
 
         private void OnDrawGizmos()

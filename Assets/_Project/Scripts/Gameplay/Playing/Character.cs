@@ -8,11 +8,12 @@ namespace Bloodlust.Gameplay.Playing
     {
         [SerializeField] 
         private CharacterMovement _movement;
-        [SerializeField]
-        private HealthController _healthController;
-
         [SerializeField] 
         private BloodlustController _bloodlustController;
+        [SerializeField]
+        private HealthController _healthController;
+        [SerializeField]
+        private CharacterView _characterView;
 
         private PlayerControls _playerControls;
 
@@ -23,9 +24,13 @@ namespace Bloodlust.Gameplay.Playing
             _playerControls = playerControls;
             _playerControls.Enable();
             
-            _movement.Begin(_playerControls);
+            _characterView.Begin();
+            
+            _movement.Begin(_playerControls, _characterView);
+            _bloodlustController.Begin(_playerControls, _healthController, _characterView, _movement);
             _healthController.Begin();
-            _bloodlustController.Begin(_healthController, _playerControls);
+
+            _movement.OnReachTarget += HandleReachTarget;
         }
 
         public void Stop()
@@ -34,22 +39,18 @@ namespace Bloodlust.Gameplay.Playing
             _movement.Stop();
             _healthController.Stop();
             _bloodlustController.Stop();
+            _characterView.Stop();
+            
+            _movement.OnReachTarget -= HandleReachTarget;
         }
 
         public void Tick(float deltaTime)
         {
-#if UNITY_EDITOR
-            if (Input.GetKeyDown(KeyCode.K))
+            if (!_bloodlustController.IsDrainingBlood)
             {
-                _healthController.TakeDamage(10);
+                _movement.Tick(deltaTime);
             }
-            else if (Input.GetKeyDown(KeyCode.L))
-            {
-                _healthController.Heal(40);
-            }
-#endif
-            
-            _movement.Tick(deltaTime);
+
             _bloodlustController.Tick(deltaTime);
         }
         
@@ -58,9 +59,9 @@ namespace Bloodlust.Gameplay.Playing
             _movement.FixedTick(fixedDeltaTime);
         }
 
-        public void SetPosition(Vector3 position)
+        private void HandleReachTarget()
         {
-            transform.position = position;
+            _bloodlustController.DrainCurrentTargetBlood();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Bloodlust.Gameplay.Playing
         {
             _playerControls = new PlayerControls();
             
-            _character.SetPosition(_spawnPoint.position);
+            _character.transform.position = _spawnPoint.position;
             _character.Begin(_playerControls);
         }
 

@@ -1,3 +1,4 @@
+using System;
 using Bloodlust.Inputs;
 using UnityEngine;
 
@@ -5,18 +6,24 @@ namespace Bloodlust.Gameplay.Playing
 {
     public class CharacterMovement : MonoBehaviour
     {
+        public event Action OnReachTarget;
+        
         [SerializeField] 
         private Rigidbody2D _rigidbody;
         [SerializeField]
         private float _moveSpeed;
+        [SerializeField]
+        private float _moveTowardsSpeed;
         
         private PlayerControls _playerControls;
+        private CharacterView _characterView;
         private Vector2 _move;
-        private bool _isFacingRight = true;
+        private Transform _targetPosition;
 
-        public void Begin(PlayerControls playerControls)
+        public void Begin(PlayerControls playerControls, CharacterView characterView)
         {
             _playerControls = playerControls;
+            _characterView = characterView;
         }
         
         public void Stop()
@@ -24,28 +31,43 @@ namespace Bloodlust.Gameplay.Playing
 
         public void Tick(float deltaTime)
         {
+            if (_targetPosition != null)
+            {
+                HandleMoveTorwardsTarget(deltaTime);
+                return;
+            }
+            
             _move = GetNormalizedMove();
 
-            HandleFlip();
+            _characterView.HandleFlip(_move);
+            _characterView.HandleRunningAnimation(_move);
         }
 
         public void FixedTick(float fixedDeltaTime)
         {
+            if (_targetPosition != null)
+            {
+                return;
+            }
+
             _rigidbody.velocity = _move * (fixedDeltaTime * _moveSpeed);
         }
 
-        private void HandleFlip()
+        public void MoveTowardsPosition(Transform target)
         {
-            if (_isFacingRight && _move.x <= -1f || !_isFacingRight && _move.x >= 1f)
+            _targetPosition = target;
+        }
+        
+        private void HandleMoveTorwardsTarget(float deltaTime)
+        {
+            float step = _moveTowardsSpeed * deltaTime;
+
+            transform.position = Vector2.MoveTowards(transform.position, _targetPosition.position, step);
+            
+            if (Vector3.Distance(transform.position, _targetPosition.position) <= 0.1f)
             {
-                Transform myTransform = transform;
-                Vector3 localScale = myTransform.localScale;
-
-                float localScaleX = localScale.x;
-                localScaleX *= -1f;
-                myTransform.localScale = new Vector3(localScaleX, localScale.y, localScale.z);
-
-                _isFacingRight = !_isFacingRight;
+                OnReachTarget?.Invoke();
+                _targetPosition = null;
             }
         }
 
