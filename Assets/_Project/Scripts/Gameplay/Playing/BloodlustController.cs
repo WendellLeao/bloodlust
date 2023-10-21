@@ -79,9 +79,9 @@ namespace Bloodlust.Gameplay.Playing
             Transform colliderTransform = hitCollider.transform;
 
             bool isFacingRight = colliderTransform.localScale.x > 0;
-            float offset = isFacingRight ? -0.5f : 0.5f;
+            float offset = isFacingRight ? -0.2f : 0.2f;
 
-            transform.position = colliderTransform.position + new Vector3(offset, 0.5f);
+            transform.position = colliderTransform.position + new Vector3(offset, 0f);
 
             hasBlood.DrainBlood(amount: 9999, _damageable);
         }
