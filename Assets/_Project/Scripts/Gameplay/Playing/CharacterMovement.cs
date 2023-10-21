@@ -33,7 +33,10 @@ namespace Bloodlust.Gameplay.Playing
         {
             if (_targetPosition != null)
             {
+                _move = Vector3.zero;
+
                 HandleMoveTorwardsTarget(deltaTime);
+                
                 return;
             }
             
@@ -47,6 +50,8 @@ namespace Bloodlust.Gameplay.Playing
         {
             if (_targetPosition != null)
             {
+                _rigidbody.velocity = Vector3.zero;
+                
                 return;
             }
 
