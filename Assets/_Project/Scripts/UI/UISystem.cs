@@ -19,7 +19,9 @@ namespace Bloodlust.UI
 
             _uiGameplayView.Initialize();
 
+#if !UNITY_EDITOR
             _uiFadeView.FadeOut();
+#endif
         }
         
         private void OnDestroy()

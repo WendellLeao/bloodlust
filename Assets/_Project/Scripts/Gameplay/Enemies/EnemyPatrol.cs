@@ -11,8 +11,9 @@ namespace Bloodlust.Gameplay.Enemies
         [SerializeField] private float _movementSpeed;
         [SerializeField] private float _startWaitTime;
         [SerializeField] private Transform[] _moveSpots;
-
+        
         [SerializeField] private EnemyAnimator _myAnimator;
+        [SerializeField] private bool _isFacingRight = true;
 
         private float _waitTime;
         private int _nextSpot = 0;
@@ -54,28 +55,35 @@ namespace Bloodlust.Gameplay.Enemies
                 if (_waitTime <= 0)
                 {
                     SetNewSpot();
+                    Vector3 targetPosition = _moveSpots[_nextSpot].position;
+                    StartCoroutine(Flip(targetPosition, 0f));
                     _waitTime = _startWaitTime;
                     _myAnimator.HandleRunningAnimation(true);
                 }
                 else
                 {
                     _myAnimator.HandleRunningAnimation(false);
-                    StartCoroutine(Flip(_waitTime));
+
                     _waitTime -= Time.deltaTime;
                 }
             }
         }
 
-        private IEnumerator Flip(float delay)
+        private IEnumerator Flip(Vector3 targetPosition, float delay)
         {
             yield return new WaitForSeconds(delay);
-            if (_moveDirectionTowards)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            else
+
+            Vector3 myPosition = transform.position;
+
+            if (targetPosition.x < myPosition.x)
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
+                _isFacingRight = false;
+            }
+            else if (targetPosition.x > transform.position.x)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                _isFacingRight = true;
             }
         }
     }

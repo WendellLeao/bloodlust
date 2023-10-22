@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1268895394848028192}
   - component: {fileID: 4105185125195922490}
   - component: {fileID: 8450318694275453482}
+  - component: {fileID: 3410107689941757670}
   m_Layer: 0
   m_Name: View_Enemy
   m_TagString: Untagged
@@ -108,6 +109,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3410107689941757670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6042989282031011420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919809d44fb28c74ba106959bd318fcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 8450318694275453482}
 --- !u!1 &6324579062573234443
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,6 +217,7 @@ GameObject:
   - component: {fileID: 3602454798542643479}
   - component: {fileID: 8509398427304690648}
   - component: {fileID: 3248108772331193492}
+  - component: {fileID: 2902942964040311519}
   m_Layer: 0
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -326,6 +341,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 10
   _invulnerabilityTime: 0
+--- !u!114 &2902942964040311519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6586809197029215615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35ae4b9333d9e24b90c6da98235fa43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 1
+  _startWaitTime: 1
+  _moveSpots: []
+  _myAnimator: {fileID: 3410107689941757670}
+  _isFacingRight: 1
 --- !u!1001 &4893264460798587463
 PrefabInstance:
   m_ObjectHideFlags: 0
