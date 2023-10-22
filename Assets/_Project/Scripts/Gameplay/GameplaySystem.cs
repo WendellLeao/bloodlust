@@ -10,23 +10,29 @@ namespace Bloodlust.Gameplay
         private CharacterManager _characterManager;
         [SerializeField] 
         private EnemiesManager _enemiesManager;
-
-        public CharacterManager CharacterManager => _characterManager;
+        [SerializeField] 
+        private ScenesManager _scenesManager;
 
         public static GameplaySystem Instance;
         
+        public CharacterManager CharacterManager => _characterManager;
+
+        public ScenesManager ScenesManager => _scenesManager;
+
         private void Awake()
         {
             Instance = this;
 
             _characterManager.Initialize();
             _enemiesManager.Initialize();
+            _scenesManager.Initialize();
         }
 
         private void OnDestroy()
         {
             _characterManager.Dispose();
             _enemiesManager.Dispose();
+            _scenesManager.Dispose();
         }
 
         private void Update()
