@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1439086590674645930, guid: 9bc3227e5bbf91b4c8c584144a94fd0c, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: EnemyBald
       objectReference: {fileID: 0}
     - target: {fileID: 5353927935811023186, guid: 9bc3227e5bbf91b4c8c584144a94fd0c, type: 3}
       propertyPath: m_LocalPosition.x
