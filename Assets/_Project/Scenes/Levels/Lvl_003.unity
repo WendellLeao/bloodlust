@@ -267,6 +267,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5353927935811023186, guid: 9bc3227e5bbf91b4c8c584144a94fd0c, type: 3}
   m_PrefabInstance: {fileID: 1460020843}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1460020845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1461817487909882408, guid: 9bc3227e5bbf91b4c8c584144a94fd0c, type: 3}
+  m_PrefabInstance: {fileID: 1460020843}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05990510b834c918d14b4dcc548179c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1598901081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1461817487909882408, guid: 24bb02a5a40df6645b742428ea9cbccf, type: 3}
@@ -13090,12 +13101,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4614734765299244922, guid: 8b46041c03dbf534aa54c2c01e45d7ff, type: 3}
       propertyPath: _enemies.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4614734765299244922, guid: 8b46041c03dbf534aa54c2c01e45d7ff, type: 3}
       propertyPath: _enemies.Array.data[0]
       value: 
       objectReference: {fileID: 1598901081}
+    - target: {fileID: 4614734765299244922, guid: 8b46041c03dbf534aa54c2c01e45d7ff, type: 3}
+      propertyPath: _enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 1460020845}
     - target: {fileID: 5820485629876962240, guid: 8b46041c03dbf534aa54c2c01e45d7ff, type: 3}
       propertyPath: _character
       value: 
