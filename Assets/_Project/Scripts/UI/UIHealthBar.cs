@@ -11,6 +11,8 @@ namespace Bloodlust.UI
     {
         [SerializeField] 
         private Image _healthBarImage;
+        [SerializeField] 
+        private Image _maxHealthBarImage;
 
         private HealthController _characterHealthController;
 
@@ -41,7 +43,8 @@ namespace Bloodlust.UI
         
         private void HandleCharacterHealthChanged(int currentHealth, int maxHealth)
         {
-            _healthBarImage.fillAmount = (float)currentHealth / maxHealth;
+            _healthBarImage.fillAmount = (float)currentHealth / _characterHealthController.OriginalMaxHealth;
+            _maxHealthBarImage.fillAmount = (float)maxHealth / _characterHealthController.OriginalMaxHealth;
         }
     }
 }

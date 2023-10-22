@@ -302,8 +302,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1305dbb7d245e6a36eceebeb611bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 20
-  _damageRate: 0.6
+  _damageAmount: 2
+  _damageRate: 0.1
   _drainBloodAmount: 50
+  _healMaxHealthAmount: 0
   _delayToDrainBlood: 1
   _radius: 2

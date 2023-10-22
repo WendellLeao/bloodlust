@@ -22,5 +22,18 @@ namespace Bloodlust.Gameplay.Enemies
                 enemy.Stop();
             }
         }
+
+        public void Tick(float deltaTime)
+        {
+            foreach (Enemy enemy in _enemies)
+            {
+                if (enemy == null)
+                {
+                    continue;
+                }
+                
+                enemy.Tick(deltaTime);
+            }
+        }
     }
 }

@@ -16,6 +16,8 @@ namespace Bloodlust.Gameplay.Playing
         [Header("Drain Blood")] 
         [SerializeField]
         private int _drainBloodAmount;
+        [SerializeField]
+        private int _healMaxHealthAmount;
         [SerializeField] 
         private float _delayToDrainBlood = 1f;
         [SerializeField]
@@ -48,7 +50,10 @@ namespace Bloodlust.Gameplay.Playing
 
         public void Tick(float deltaTime)
         {
-            HandleGradualDamage(deltaTime);
+            if (!_movement.HasTarget && !_isDrainingBlood)
+            {
+                HandleGradualDamage(deltaTime);
+            }
 
             if (CanCheckForBloodToDrain())
             {
@@ -68,6 +73,7 @@ namespace Bloodlust.Gameplay.Playing
             {
                 yield return new WaitForSeconds(_delayToDrainBlood);
 
+                _damageable.HealMaxHealth(_healMaxHealthAmount);
                 _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
 
                 _characterView.ResetOrderInLayer();
