@@ -10,6 +10,7 @@ namespace Bloodlust.Gameplay.Enemies
         [SerializeField] private Transform[] _moveSpots;
         [SerializeField] private EnemyLamp _enemyLamp;
         [SerializeField] private EnemyAnimator _myAnimator;
+        [SerializeField] private Enemy _enemy;
 
         private float _waitTime;
         private int _nextSpot = 0;
@@ -23,6 +24,12 @@ namespace Bloodlust.Gameplay.Enemies
 
         void FixedUpdate()
         {
+            if (_enemy.IsBeingDrained || !_enemy.IsAlive)
+            {
+                _myAnimator.HandleRunningAnimation(false);
+                return;
+            }
+            
             Move();
         }
 

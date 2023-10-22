@@ -1,4 +1,5 @@
 using System.Collections;
+using Bloodlust.Gameplay.Enemies;
 using Bloodlust.Gameplay.Health;
 using Bloodlust.Inputs;
 using UnityEngine;
@@ -108,6 +109,11 @@ namespace Bloodlust.Gameplay.Playing
                 
                 if (hitCollider.transform.TryGetComponent(out IHasBlood hasBlood))
                 {
+                    if (hitCollider.transform.TryGetComponent(out Enemy enemy))
+                    {
+                        enemy.IsBeingDrained = true;
+                    }
+                    
                     _currentBloodTarget = hasBlood;
                     
                     _damageable.SetIsInvulnerable(true);

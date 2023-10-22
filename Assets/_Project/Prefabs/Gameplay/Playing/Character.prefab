@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1034124559031658401}
-  _moveSpeed: 400
+  _moveSpeed: 350
   _moveTowardsSpeed: 20
 --- !u!114 &2134386333316548249
 MonoBehaviour:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1305dbb7d245e6a36eceebeb611bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 2
+  _damageAmount: 3
   _damageRate: 0.1
   _drainBloodAmount: 50
   _healMaxHealthAmount: 20

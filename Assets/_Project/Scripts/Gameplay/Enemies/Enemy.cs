@@ -9,8 +9,12 @@ namespace Bloodlust.Gameplay.Enemies
         private EnemyLamp _enemyLamp;
         [SerializeField]
         private HealthController _healthController;
-        
+
         public float DrainPower { get; } = 50;
+
+        public bool IsBeingDrained { get; set; }
+
+        public bool IsAlive => _healthController.CurrentHealth > 0f;
 
         public void Begin()
         {
@@ -22,6 +26,8 @@ namespace Bloodlust.Gameplay.Enemies
         {
             _healthController.Stop();
             _enemyLamp.Stop();
+
+            IsBeingDrained = false;
         }
 
         public void Tick(float deltaTime)
@@ -31,6 +37,8 @@ namespace Bloodlust.Gameplay.Enemies
         
         public void DrainBlood(int amount, IDamageable damageable)
         {
+            IsBeingDrained = true;
+            
             _healthController.TakeDamage(amount);
             
             damageable.Heal((int)DrainPower);

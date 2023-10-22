@@ -354,10 +354,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 1
-  _startWaitTime: 1
+  _startWaitTime: 0.2
   _moveSpots: []
   _enemyLamp: {fileID: 23769604684377071}
   _myAnimator: {fileID: 3410107689941757670}
+  _enemy: {fileID: 8509398427304690648}
 --- !u!1001 &4893264460798587463
 PrefabInstance:
   m_ObjectHideFlags: 0
