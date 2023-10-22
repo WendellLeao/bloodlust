@@ -15,5 +15,7 @@ namespace Bloodlust.Gameplay.Health
         void Heal(int amount);
 
         void HealMaxHealth(int amount);
+
+        void SetIsInvulnerable(bool isInvulnerable);
     }
 }

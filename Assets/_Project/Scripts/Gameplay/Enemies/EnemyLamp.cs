@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Bloodlust.Gameplay.Health;
 using Bloodlust.Gameplay.Playing;
@@ -38,7 +37,7 @@ namespace Bloodlust.Gameplay.Enemies
                     HealthController characterHealth = _character.HealthController;
                     
                     characterHealth.ReduceMaxHealth(_maxHealthDamageAmount);
-                    // characterHealth.TakeDamage(_damageAmount);
+                    characterHealth.TakeDamage(_damageAmount);
                     
                     _timer = 0f;
                 }

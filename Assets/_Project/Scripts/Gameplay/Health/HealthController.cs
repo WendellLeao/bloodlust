@@ -51,6 +51,16 @@ namespace Bloodlust.Gameplay.Health
             SetHealth(newHealth);
         }
 
+        public void ReduceMaxHealth(int amount)
+        {
+            if (_isInvulnerable)
+            {
+                return;
+            }
+            
+            SetMaxHealth(_maxHealth - amount);
+        }
+
         public void Heal(int amount)
         {
             SetHealth(_currentHealth + amount);
@@ -68,11 +78,16 @@ namespace Bloodlust.Gameplay.Health
             SetMaxHealth(_maxHealth + amount);
         }
 
-        public void ReduceMaxHealth(int amount)
+        public void SetIsInvulnerable(bool isInvulnerable)
         {
-            SetMaxHealth(_maxHealth - amount);
+            if (_invulnerabilityRoutine != null)
+            {
+                StopCoroutine(_invulnerabilityRoutine);
+            }
+
+            _isInvulnerable = isInvulnerable;
         }
-        
+
         private void SetHealth(int newHealth)
         {
             _currentHealth = Mathf.Clamp(newHealth, 0, _maxHealth);

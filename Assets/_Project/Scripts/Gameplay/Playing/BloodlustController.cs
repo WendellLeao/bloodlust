@@ -50,10 +50,7 @@ namespace Bloodlust.Gameplay.Playing
 
         public void Tick(float deltaTime)
         {
-            if (!_movement.HasTarget && !_isDrainingBlood)
-            {
-                HandleGradualDamage(deltaTime);
-            }
+            HandleGradualDamage(deltaTime);
 
             if (CanCheckForBloodToDrain())
             {
@@ -64,6 +61,8 @@ namespace Bloodlust.Gameplay.Playing
         public void DrainCurrentTargetBlood()
         {
             _isDrainingBlood = true;
+
+            _damageable.SetIsInvulnerable(true);
 
             _characterView.TriggerDrainBlood();
 
@@ -79,6 +78,7 @@ namespace Bloodlust.Gameplay.Playing
                 _characterView.ResetOrderInLayer();
                 
                 _isDrainingBlood = false;
+                _damageable.SetIsInvulnerable(false);
             }
         }
 
@@ -109,6 +109,8 @@ namespace Bloodlust.Gameplay.Playing
                 if (hitCollider.transform.TryGetComponent(out IHasBlood hasBlood))
                 {
                     _currentBloodTarget = hasBlood;
+                    
+                    _damageable.SetIsInvulnerable(true);
                     
                     DashToTarget(hitCollider);
                 }
