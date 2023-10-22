@@ -37,12 +37,22 @@ namespace Bloodlust.Gameplay
 
         private void Update()
         {
+            if (_scenesManager.IsLoadingScene)
+            {
+                return;
+            }
+
             _characterManager.Tick(Time.deltaTime);
             _enemiesManager.Tick(Time.deltaTime);
         }
 
         private void FixedUpdate()
         {
+            if (_scenesManager.IsLoadingScene)
+            {
+                return;
+            }
+            
             _characterManager.FixedTick(Time.fixedDeltaTime);
         }
     }

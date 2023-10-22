@@ -10,8 +10,14 @@ namespace Bloodlust.Gameplay
         [SerializeField] 
         private float _loadNextSceneDelay;
 
+        private bool _isLoadingScene;
+
+        public bool IsLoadingScene => _isLoadingScene;
+
         public void Initialize()
-        { }
+        {
+            _isLoadingScene = false;
+        }
         
         public void Dispose()
         {}
@@ -37,6 +43,8 @@ namespace Bloodlust.Gameplay
 
         private IEnumerator LoadSceneRoutine(int sceneIndex, float delay)
         {
+            _isLoadingScene = true;
+            
             UISystem uiSystem = UISystem.Instance;
             uiSystem.UIFadeView.FadeIn();
 

@@ -60,7 +60,10 @@ namespace Bloodlust.Gameplay.Playing
 
         public void FixedTick(float fixedDeltaTime)
         {
-            _movement.FixedTick(fixedDeltaTime);
+            if (CanMove())
+            {
+                _movement.FixedTick(fixedDeltaTime);
+            }
         }
 
         private void HandleDeath()
@@ -82,7 +85,7 @@ namespace Bloodlust.Gameplay.Playing
                 return false;
             }
             
-            if(_bloodlustController.IsDrainingBlood)
+            if (_bloodlustController.IsDrainingBlood)
             {
                 return false;
             }
