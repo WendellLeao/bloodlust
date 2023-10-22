@@ -43,8 +43,10 @@ namespace Bloodlust.UI
         
         private void HandleCharacterHealthChanged(int currentHealth, int maxHealth)
         {
-            _healthBarImage.fillAmount = (float)currentHealth / _characterHealthController.OriginalMaxHealth;
-            _maxHealthBarImage.fillAmount = (float)maxHealth / _characterHealthController.OriginalMaxHealth;
+            int originalMaxHealth = _characterHealthController.OriginalMaxHealth;
+            
+            _maxHealthBarImage.fillAmount = (float)maxHealth / originalMaxHealth;
+            _healthBarImage.fillAmount = (float)currentHealth / originalMaxHealth;
         }
     }
 }

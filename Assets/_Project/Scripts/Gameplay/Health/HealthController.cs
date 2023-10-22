@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Bloodlust.Gameplay.Health
@@ -12,11 +13,15 @@ namespace Bloodlust.Gameplay.Health
         
         [SerializeField] 
         private int _maxHealth = 100;
+        [SerializeField] 
+        private float _invulnerabilityTime;
 
+        private Coroutine _invulnerabilityRoutine;
         private int _originalMaxHealth;
         private int _currentHealth;
         private bool _healthWillDeplete;
-        
+        private bool _isInvulnerable;
+
         public int CurrentHealth => _currentHealth;
         public int MaxHealth => _maxHealth;
         public int OriginalMaxHealth => _originalMaxHealth;
@@ -34,6 +39,11 @@ namespace Bloodlust.Gameplay.Health
 
         public void TakeDamage(int amount)
         {
+            if (_isInvulnerable)
+            {
+                return;
+            }
+
             int newHealth = _currentHealth - amount;
             
             _healthWillDeplete = newHealth <= 0f;
@@ -44,6 +54,13 @@ namespace Bloodlust.Gameplay.Health
         public void Heal(int amount)
         {
             SetHealth(_currentHealth + amount);
+
+            if (_invulnerabilityRoutine != null)
+            {
+                StopCoroutine(_invulnerabilityRoutine);
+            }
+            
+            _invulnerabilityRoutine = StartCoroutine(TriggerInvulnerabilityOnHealRoutine());
         }
         
         public void HealMaxHealth(int amount)
@@ -73,6 +90,15 @@ namespace Bloodlust.Gameplay.Health
             }
             
             OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
+        }
+        
+        private IEnumerator TriggerInvulnerabilityOnHealRoutine()
+        {
+            _isInvulnerable = true;
+
+            yield return new WaitForSeconds(_invulnerabilityTime);
+
+            _isInvulnerable = false;
         }
     }
 }
