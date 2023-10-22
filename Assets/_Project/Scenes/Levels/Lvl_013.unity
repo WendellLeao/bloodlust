@@ -372,6 +372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 5092851418050366457, guid: 8f981f99ed1bf244e8454e3e9df91008, type: 3}
+      propertyPath: _isFacingRight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8520084747877065456, guid: 8f981f99ed1bf244e8454e3e9df91008, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -7335,7 +7339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247476367937807742, guid: eb812379f0dd38344a1bbdf3a2cf40e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.5
+      value: 11.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247476367937807742, guid: eb812379f0dd38344a1bbdf3a2cf40e2, type: 3}
       propertyPath: m_LocalPosition.y

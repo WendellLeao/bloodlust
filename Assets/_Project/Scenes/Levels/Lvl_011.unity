@@ -307,6 +307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 5092851418050366457, guid: 8f981f99ed1bf244e8454e3e9df91008, type: 3}
+      propertyPath: _isFacingRight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8520084747877065456, guid: 8f981f99ed1bf244e8454e3e9df91008, type: 3}
       propertyPath: m_LocalScale.x
       value: -1

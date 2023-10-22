@@ -10,11 +10,10 @@ namespace Bloodlust.Gameplay.Playing
         private Animator _animator;
         [SerializeField]
         private CharacterAnimationController _characterAnimationController;
-
+        [SerializeField]
         private bool _isFacingRight = true;
+        
         private int _originalSortingOrder;
-
-        public bool IsFacingRight => _isFacingRight;
         
         public void Begin()
         {
