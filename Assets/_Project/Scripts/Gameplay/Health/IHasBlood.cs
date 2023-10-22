@@ -5,5 +5,7 @@ namespace Bloodlust.Gameplay.Health
         float DrainPower { get; }
         
         void DrainBlood(int amount, IDamageable damageable);
+
+        IDamageable GetDamageable();
     }
 }

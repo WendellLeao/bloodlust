@@ -8,7 +8,6 @@ namespace Bloodlust.Gameplay.Enemies
         [SerializeField]
         private HealthController _healthController;
 
-        // TODO: remove hardcoded value
         public float DrainPower { get; } = 50;
 
         public void Begin()
@@ -25,14 +24,17 @@ namespace Bloodlust.Gameplay.Enemies
         {
             _healthController.TakeDamage(amount);
             
-            // TODO: remove hardcoded value
             damageable.Heal((int)DrainPower);
             
             if (_healthController.CurrentHealth <= 0)
             {
-                Destroy(gameObject, 0.2f);
+                Destroy(gameObject);
             }
-            //
+        }
+
+        public IDamageable GetDamageable()
+        {
+            return _healthController;
         }
     }
 }

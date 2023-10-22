@@ -50,7 +50,7 @@ namespace Bloodlust.Gameplay.Playing
         {
             HandleGradualDamage(deltaTime);
 
-            if (_landMap.Interact.triggered)
+            if (CanCheckForBloodToDrain())
             {
                 CheckForBloodToDrain();
             }
@@ -67,7 +67,7 @@ namespace Bloodlust.Gameplay.Playing
             IEnumerator DrainBloodRoutine()
             {
                 yield return new WaitForSeconds(_delayToDrainBlood);
-            
+
                 _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
 
                 _characterView.ResetOrderInLayer();
@@ -116,6 +116,26 @@ namespace Bloodlust.Gameplay.Playing
             Transform colliderTransform = hitCollider.transform;
 
             _movement.MoveTowardsPosition(colliderTransform);
+        }
+        
+        private bool CanCheckForBloodToDrain()
+        {
+            if (_movement.HasTarget)
+            {
+                return false;
+            }
+
+            if (_isDrainingBlood)
+            {
+                return false;
+            }
+            
+            if (!_landMap.Interact.triggered)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private void OnDrawGizmos()

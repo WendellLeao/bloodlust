@@ -11,23 +11,28 @@ namespace Bloodlust.Gameplay.Health
         private int _maxHealth = 100;
 
         private int _currentHealth;
+        private bool _healthWillDeplete;
         
         public int CurrentHealth => _currentHealth;
         public int MaxHealth => _maxHealth;
+        public bool HealthWillDeplete => _healthWillDeplete;
 
         public void Begin()
         {
             _currentHealth = _maxHealth;
+            _healthWillDeplete = false;
         }
 
         public void Stop()
-        {
-            _currentHealth = _maxHealth;
-        }
+        { }
 
         public void TakeDamage(int amount)
         {
-            SetHealth(_currentHealth - amount);
+            int newHealth = _currentHealth - amount;
+            
+            _healthWillDeplete = newHealth <= 0f;
+            
+            SetHealth(newHealth);
         }
 
         public void Heal(int amount)

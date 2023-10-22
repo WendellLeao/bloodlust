@@ -20,6 +20,8 @@ namespace Bloodlust.Gameplay.Playing
         private Vector2 _move;
         private Transform _targetPosition;
 
+        public bool HasTarget => _targetPosition != null;
+
         public void Begin(PlayerControls playerControls, CharacterView characterView)
         {
             _playerControls = playerControls;

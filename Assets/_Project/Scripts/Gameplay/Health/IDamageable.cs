@@ -5,6 +5,8 @@ namespace Bloodlust.Gameplay.Health
         int CurrentHealth { get; }
         
         int MaxHealth { get; }
+        
+        bool HealthWillDeplete { get; }
 
         void TakeDamage(int amount);
 
