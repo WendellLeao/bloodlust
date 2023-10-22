@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 1461817487909882408}
   - component: {fileID: 5596085164502926321}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemySmith
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,8 +373,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1002385057, guid: 6aae5c9b536250a4ea4b4b1975a03339, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1484615400, guid: 0d8da05e94a76b940869f7d4d5f7f319, type: 3}
   m_Color: {r: 0.7735849, g: 0.762638, b: 0.762638, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -395,7 +395,7 @@ Animator:
   m_GameObject: {fileID: 4724415302317509315}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0841b8a4107716d4387bb6666bfd80ab, type: 2}
+  m_Controller: {fileID: 9100000, guid: 18d3459ab09b73c41a7a20c9060d9cdc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
