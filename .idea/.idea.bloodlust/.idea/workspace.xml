@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfab8465-58f7-4475-b7fd-f9cfb1ab36f7" name="Changes" comment="" />
+    <list default="true" id="dfab8465-58f7-4475-b7fd-f9cfb1ab36f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/BloodBag.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Project/Scripts/Gameplay/Health/BloodBag.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.bloodlust/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.bloodlust/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Blood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Prefabs/Gameplay/Blood.prefab" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
