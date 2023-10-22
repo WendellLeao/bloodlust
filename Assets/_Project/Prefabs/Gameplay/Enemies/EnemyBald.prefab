@@ -52,6 +52,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1002385057, guid: 6aae5c9b536250a4ea4b4b1975a03339, type: 3}
+    - target: {fileID: 4355899366404235183, guid: aae2987f9e0f7e542a85f854fd810fed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355899366404235183, guid: aae2987f9e0f7e542a85f854fd810fed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.085
+      objectReference: {fileID: 0}
     - target: {fileID: 6586809197029215615, guid: aae2987f9e0f7e542a85f854fd810fed, type: 3}
       propertyPath: m_Name
       value: EnemyBald

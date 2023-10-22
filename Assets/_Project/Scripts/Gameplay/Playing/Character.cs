@@ -30,6 +30,7 @@ namespace Bloodlust.Gameplay.Playing
             _bloodlustController.Begin(_playerControls, _healthController, _characterView, _movement);
             _healthController.Begin();
 
+            _healthController.OnDeath += HandleDeath;
             _movement.OnReachTarget += HandleReachTarget;
         }
 
@@ -41,6 +42,7 @@ namespace Bloodlust.Gameplay.Playing
             _bloodlustController.Stop();
             _characterView.Stop();
             
+            _healthController.OnDeath -= HandleDeath;
             _movement.OnReachTarget -= HandleReachTarget;
         }
 
@@ -57,6 +59,13 @@ namespace Bloodlust.Gameplay.Playing
         public void FixedTick(float fixedDeltaTime)
         {
             _movement.FixedTick(fixedDeltaTime);
+        }
+
+        private void HandleDeath()
+        {
+            GameplaySystem gameplaySystem = GameplaySystem.Instance;
+            
+            gameplaySystem.ScenesManager.ReloadActiveScene();
         }
 
         private void HandleReachTarget()

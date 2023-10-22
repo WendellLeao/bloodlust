@@ -160,10 +160,10 @@ RectTransform:
   - {fileID: 1493294185190571182}
   m_Father: {fileID: 6108698459219168024}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 357.07495, y: -82.18536}
-  m_SizeDelta: {x: 714.1499, y: 164.37073}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7750714795457274126
 MonoBehaviour:
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 5872640988152702979}
   - component: {fileID: 2402214043465641451}
   m_Layer: 5
-  m_Name: HealthBarImage)
+  m_Name: HealthBarImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -613,8 +613,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 357, y: -65}
-  m_SizeDelta: {x: 615.6946, y: 47.108307}
+  m_AnchoredPosition: {x: 259.7401, y: -57.55841}
+  m_SizeDelta: {x: 421.175, y: 32.2252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1888761578209979813
 CanvasRenderer:
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
+  m_Color: {r: 1, g: 0.8713282, b: 0.8254717, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

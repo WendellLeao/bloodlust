@@ -15,11 +15,23 @@ namespace Bloodlust.Gameplay
         
         public void Dispose()
         {}
+
+        public void ReloadActiveScene()
+        {
+            int activeSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+            StartCoroutine(LoadSceneRoutine(activeSceneIndex, _loadNextSceneDelay));
+        }
         
         public void LoadNextScene()
         {
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
+            if (SceneManager.GetActiveScene().name.Contains("Lvl_015"))
+            {
+                Application.Quit();
+            }
+            
             StartCoroutine(LoadSceneRoutine(nextSceneIndex, _loadNextSceneDelay));
         }
 
