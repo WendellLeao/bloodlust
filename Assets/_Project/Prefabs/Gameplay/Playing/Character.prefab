@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 1034124559031658401}
-  _moveSpeed: 300
+  _moveSpeed: 400
   _moveTowardsSpeed: 20
 --- !u!114 &2134386333316548249
 MonoBehaviour:
