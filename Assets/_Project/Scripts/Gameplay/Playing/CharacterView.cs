@@ -51,7 +51,7 @@ namespace Bloodlust.Gameplay.Playing
 
         public void TriggerDash()
         {
-            _spriteRenderer.sortingOrder = 0;
+            // _spriteRenderer.sortingOrder = 0;
             
             _characterAnimationController.TriggerDash();
         }
