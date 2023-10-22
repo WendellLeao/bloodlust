@@ -16,6 +16,8 @@ namespace Bloodlust.Gameplay.Playing
         [Header("Drain Blood")] 
         [SerializeField]
         private int _drainBloodAmount;
+        [SerializeField]
+        private int _healMaxHealthAmount;
         [SerializeField] 
         private float _delayToDrainBlood = 1f;
         [SerializeField]
@@ -60,6 +62,8 @@ namespace Bloodlust.Gameplay.Playing
         {
             _isDrainingBlood = true;
 
+            _damageable.SetIsInvulnerable(true);
+
             _characterView.TriggerDrainBlood();
 
             StartCoroutine(DrainBloodRoutine());
@@ -68,11 +72,13 @@ namespace Bloodlust.Gameplay.Playing
             {
                 yield return new WaitForSeconds(_delayToDrainBlood);
 
+                _damageable.HealMaxHealth(_healMaxHealthAmount);
                 _currentBloodTarget.DrainBlood(_drainBloodAmount, _damageable);
 
                 _characterView.ResetOrderInLayer();
                 
                 _isDrainingBlood = false;
+                _damageable.SetIsInvulnerable(false);
             }
         }
 
@@ -103,6 +109,8 @@ namespace Bloodlust.Gameplay.Playing
                 if (hitCollider.transform.TryGetComponent(out IHasBlood hasBlood))
                 {
                     _currentBloodTarget = hasBlood;
+                    
+                    _damageable.SetIsInvulnerable(true);
                     
                     DashToTarget(hitCollider);
                 }

@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
+  _invulnerabilityTime: 0.5
 --- !u!114 &1614553586271241235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f1305dbb7d245e6a36eceebeb611bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 20
-  _damageRate: 0.6
+  _damageAmount: 2
+  _damageRate: 0.1
   _drainBloodAmount: 50
+  _healMaxHealthAmount: 20
   _delayToDrainBlood: 1
   _radius: 2

@@ -32,6 +32,7 @@ namespace Bloodlust.Gameplay
         private void Update()
         {
             _characterManager.Tick(Time.deltaTime);
+            _enemiesManager.Tick(Time.deltaTime);
         }
 
         private void FixedUpdate()
