@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Bloodlust.Gameplay.Enemies
 {
@@ -11,9 +8,8 @@ namespace Bloodlust.Gameplay.Enemies
         [SerializeField] private float _movementSpeed;
         [SerializeField] private float _startWaitTime;
         [SerializeField] private Transform[] _moveSpots;
-        
+        [SerializeField] private EnemyLamp _enemyLamp;
         [SerializeField] private EnemyAnimator _myAnimator;
-        [SerializeField] private bool _isFacingRight = true;
 
         private float _waitTime;
         private int _nextSpot = 0;
@@ -78,12 +74,19 @@ namespace Bloodlust.Gameplay.Enemies
             if (targetPosition.x < myPosition.x)
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
-                _isFacingRight = false;
             }
             else if (targetPosition.x > transform.position.x)
             {
                 transform.rotation = Quaternion.Euler(0, 0, 0);
-                _isFacingRight = true;
+            }
+            
+            if (targetPosition.y < myPosition.y)
+            {
+                _enemyLamp.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+            else if (targetPosition.y > myPosition.y)
+            {
+                _enemyLamp.transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
     }

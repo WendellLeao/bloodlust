@@ -356,8 +356,8 @@ MonoBehaviour:
   _movementSpeed: 1
   _startWaitTime: 1
   _moveSpots: []
+  _enemyLamp: {fileID: 23769604684377071}
   _myAnimator: {fileID: 3410107689941757670}
-  _isFacingRight: 1
 --- !u!1001 &4893264460798587463
 PrefabInstance:
   m_ObjectHideFlags: 0
