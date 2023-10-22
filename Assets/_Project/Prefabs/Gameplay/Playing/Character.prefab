@@ -306,6 +306,6 @@ MonoBehaviour:
   _damageAmount: 2
   _damageRate: 0.1
   _drainBloodAmount: 50
-  _healMaxHealthAmount: 0
+  _healMaxHealthAmount: 20
   _delayToDrainBlood: 1
   _radius: 2

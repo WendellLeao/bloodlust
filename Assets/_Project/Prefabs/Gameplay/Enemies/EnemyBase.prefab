@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05990510b834c918d14b4dcc548179c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyLamp: {fileID: 0}
+  _enemyLamp: {fileID: 23769604684377071}
   _healthController: {fileID: 3248108772331193492}
 --- !u!114 &3248108772331193492
 MonoBehaviour:
