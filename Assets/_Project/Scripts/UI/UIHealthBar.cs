@@ -43,6 +43,13 @@ namespace Bloodlust.UI
         
         private void HandleCharacterHealthChanged(int currentHealth, int maxHealth)
         {
+            if (currentHealth <= 0f)
+            {
+                gameObject.SetActive(false);
+                
+                return;
+            }
+            
             int originalMaxHealth = _characterHealthController.OriginalMaxHealth;
             
             _maxHealthBarImage.fillAmount = (float)maxHealth / originalMaxHealth;

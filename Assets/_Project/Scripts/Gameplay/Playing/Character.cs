@@ -19,6 +19,8 @@ namespace Bloodlust.Gameplay.Playing
 
         public HealthController HealthController => _healthController;
 
+        private bool IsAlive => _healthController.CurrentHealth > 0f;
+
         public void Begin(PlayerControls playerControls)
         {
             _playerControls = playerControls;
@@ -48,14 +50,14 @@ namespace Bloodlust.Gameplay.Playing
 
         public void Tick(float deltaTime)
         {
-            if (!_bloodlustController.IsDrainingBlood)
+            if (CanMove())
             {
                 _movement.Tick(deltaTime);
             }
 
             _bloodlustController.Tick(deltaTime);
         }
-        
+
         public void FixedTick(float fixedDeltaTime)
         {
             _movement.FixedTick(fixedDeltaTime);
@@ -71,6 +73,21 @@ namespace Bloodlust.Gameplay.Playing
         private void HandleReachTarget()
         {
             _bloodlustController.DrainCurrentTargetBlood();
+        }
+        
+        private bool CanMove()
+        {
+            if (!IsAlive)
+            {
+                return false;
+            }
+            
+            if(_bloodlustController.IsDrainingBlood)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

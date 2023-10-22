@@ -92,6 +92,11 @@ namespace Bloodlust.Gameplay.Health
         {
             _currentHealth = Mathf.Clamp(newHealth, 0, _maxHealth);
             
+            if (_currentHealth <= 0f)
+            {
+                OnDeath?.Invoke();
+            }
+            
             OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
         }
         
@@ -99,11 +104,6 @@ namespace Bloodlust.Gameplay.Health
         {
             _maxHealth = Mathf.Clamp(newMaxHealth, 0, _originalMaxHealth);
 
-            if (_currentHealth <= 0f)
-            {
-                OnDeath?.Invoke();
-            }
-            
             OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
         }
         

@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageAmount: 0
-  _maxHealthDamageAmount: 10
+  _maxHealthDamageAmount: 35
   _delayToDealDamage: 0
-  _damageRate: 0.2
+  _damageRate: 0.1

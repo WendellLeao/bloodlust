@@ -81,7 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b45ed1ab78e4f37bd5e9f063c4c3e9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healAmount: 100
+  _healAmount: 35
+  _healMaxHealthAmount: 9999
+  _destroyOnCollide: 1
 --- !u!1 &7576224886035503949
 GameObject:
   m_ObjectHideFlags: 0
