@@ -7,8 +7,6 @@ namespace Bloodlust.Gameplay.Playing
     {
         [SerializeField] 
         private Character _character;
-        [SerializeField] 
-        private Transform _spawnPoint;
 
         private PlayerControls _playerControls;
 
@@ -18,7 +16,6 @@ namespace Bloodlust.Gameplay.Playing
         {
             _playerControls = new PlayerControls();
             
-            _character.transform.position = _spawnPoint.position;
             _character.Begin(_playerControls);
         }
 
